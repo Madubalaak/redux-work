@@ -1,12 +1,8 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import "./index.css";
-import {
-  onIncrease,
-  onDecrease,
-  onIncreaseByFive,
-  onToggle,
-} from "./counterAction";
+import {onIncrease,onDecrease,onIncreaseByFive,onToggle} from "./counterAction";
+
 
 const Counter = () => {
   const count = useSelector((state) => {
@@ -21,19 +17,22 @@ const Counter = () => {
     <div className="card">
       <h1>Counter</h1>
       {show && <div>{count}</div>}
-      <button type="button" onClick={() => onIncrease(dispatch)}>
+      <button type="button" onClick={() => dispatch(onIncrease())}>
         Count Increase
       </button>
-      <button type="button" onClick={() => onIncreaseByFive(dispatch)}>
+      <button type="button" onClick={() => dispatch(onIncreaseByFive())}>
         Count Increase by 5
       </button>
-      <button type="button" onClick={() => onDecrease(dispatch)}>
+      <button type="button" onClick={() => dispatch(onDecrease())}>
         Count Decrease
       </button>
-      <button type="button" onClick={() => onToggle(dispatch)}>
+      <button type="button" onClick={() => dispatch(onToggle())}>
         Toggle Counter
       </button>
+     
     </div>
   );
 };
+
+
 export default Counter;

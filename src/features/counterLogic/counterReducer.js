@@ -1,10 +1,3 @@
-import {
-  INCREASE,
-  DECREASE,
-  INCREASE_BY_FIVE,
-  TOGGLE,
-} from "./counterActionConstants";
-
 const initialState = {
   count: 0,
   showCounter: true,
@@ -12,28 +5,28 @@ const initialState = {
 
 const counterReducer = (state = initialState, action) => {
   switch (action.type) {
-    case INCREASE: {
+    case "INCREASE": {
       return {
         ...state,
         count: state.count + 1,
         showCounter: state.showCounter,
       };
     }
-    case DECREASE: {
+    case "DECREASE": {
       return {
         ...state,
         count: state.count - 1,
         showCounter: state.showCounter,
       };
     }
-    case INCREASE_BY_FIVE: {
+    case "INCREASE_BY_FIVE": {
       return {
         ...state,
         count: state.count + 5,
         showCounter: state.showCounter,
       };
     }
-    case TOGGLE: {
+    case "TOGGLE": {
       return {
         ...state,
         count: state.count,
